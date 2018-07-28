@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+export default class App extends Component {
+  constructor(props){
+    super(props);
+  }
+
   render() {
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>Welcome to Community Text!</h1>
+        <h3>What's one thing you're greatful for today?</h3>
+        <p>Some responses from others in your community:</p>
+        <p>"Attending Spectra!"</p>
+
       </div>
     );
   }
 }
-
-export default App;
