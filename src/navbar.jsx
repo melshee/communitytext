@@ -1,7 +1,8 @@
 import React from 'react';
-// import { Nav, NavItem, NavLink } from 'reactstrap';
-import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
 
+// import { Nav, NavItem, NavLink } from 'reactstrap';
+import { Nav, NavItem, NavLink } from 'reactstrap';
+// Dropdown, DropdownItem, DropdownToggle, DropdownMenu, 
 //TODOD SET Active = true based on view state
 export default class Navbar extends React.Component {
   constructor(props) {
