@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import { Nav, NavItem, NavLink } from 'reactstrap';
 import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
 
-
+//TODOD SET Active = true based on view state
 export default class Navbar extends React.Component {
   constructor(props) {
     super(props);
 
     this.toggle = this.toggle.bind(this);
-    // this.changeView.
+    this.changeView = this.changeView.bind(this);
     this.state = {
       dropdownOpen: false,
       view: "menu"
@@ -21,31 +21,31 @@ export default class Navbar extends React.Component {
     });
   }
 
-  // changeView() {
-
-  // }
+  changeView(view){
+    this.props.updateView(view);
+  }
 
   render() {
     return (
       <div>
         <Nav tabs>
           <NavItem>
-            <NavLink href="#" active>Home</NavLink>
+            <NavLink href="#" onClick={() => this.changeView("home")}>Home</NavLink>
           </NavItem>
-          <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-            <DropdownToggle nav caret>
-              Communities
-            </DropdownToggle>
-            <DropdownMenu>
-              <DropdownItem header>Gratitude</DropdownItem>
-              <DropdownItem header>Health/Fitness</DropdownItem>
-              <DropdownItem header>Education</DropdownItem>
-              <DropdownItem header>Empowerment</DropdownItem>   
-              {/*<DropdownItem divider />*/}
-            </DropdownMenu>
-          </Dropdown>
           <NavItem>
-            <NavLink href="#">Profile</NavLink>
+            <NavLink disabled>Communities:</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#" onClick={() => this.changeView("gratitude")}>Gratitude</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#" onClick={() => this.changeView("health")}>Health/Fitness</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#" onClick={() => this.changeView("education")}>Education</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#" onClick={() => this.changeView("empowerment")}>Empowerment</NavLink>
           </NavItem>
         </Nav>
       </div>
