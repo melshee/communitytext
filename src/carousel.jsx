@@ -16,7 +16,7 @@ export default class Carousel extends React.Component {
 
   render() {
     console.log("res: ", this.props.responses);
-      const items = [
+      var items = [
       {
         src: background,
         altText: 'HI',
@@ -42,6 +42,38 @@ export default class Carousel extends React.Component {
         header: 'boba!!!',
       }
     ];
+
+    var items2 = [
+      {
+        src: background,
+        altText: 'HI',
+        // caption: 'Being able to be at spectra today!',
+        header: 'walking up the stairs',
+      },
+      {
+        src: background2,
+        altText: 'Quote 2',
+        // caption: 'all the mentors :)',
+        header: 'yogaaa',
+      },
+      {
+        src: background3,
+        altText: 'Quote 3',
+        // caption: 'my parents - for everything',
+        header: 'drinking lots of water...and boba',
+      },
+      {
+        src: background4,
+        altText: 'Quote 3',
+        // caption: 'boba!!!',
+        header: 'stretching every hour or so',
+      }
+    ];
+
+    if(this.props.community === "health"){
+      items = items2;
+    }
+
 
     return(
       <UncontrolledCarousel items={items} />

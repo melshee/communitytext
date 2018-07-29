@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.carousel {
+  width: 80%;
+  margin: auto;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;

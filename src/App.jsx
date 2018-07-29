@@ -85,8 +85,9 @@ export default class App extends Component {
         <h3>{this.communityToQuestion[this.state.currView]}</h3>
         <p>Friends in this community said:</p>
         {console.log("responses: ", this.state.responses)}
-        <Carousel community={this.state.currView} responses={this.state.responses}/>
-      
+        <div className="carousel">
+          <Carousel community={this.state.currView} responses={this.state.responses}/>
+        </div>
       </div>
     }
     return (
