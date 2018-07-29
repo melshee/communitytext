@@ -50,6 +50,8 @@ export default class App extends Component {
       body = 
       <div>
         <h1>Welcome to Community Text!</h1>
+        <p>Self reflection and the sharing of messages  is the reality check we all need, and Community Text is the perfect way to do it.           The revolutionized social media using text message to find communities based on your interests. <br>Find other messages that you           can relate to and share advice and revelations about yourself that can inspire others.</p>
+
       </div>
     } else {
       body = 
