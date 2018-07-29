@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import NavBar from './navbar'
 import Carousel from './carousel';
-import mongoose from 'mongoose';
-import models from './model';
 
 export default class App extends Component {
   constructor(props){
