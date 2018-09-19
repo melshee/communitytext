@@ -1,15 +1,22 @@
 import React from 'react';
+// import PropTypes from './prop-types'
 import { UncontrolledCarousel } from 'reactstrap';
-import background from './team.jpg'
-import background2 from './team2.jpg'
-import background3 from './team3.jpg'
-import background4 from './team4.jpg'
-import spectra from './spectra.jpg'
-import health from './fitness.jpg'
-import power from './power.jpg'
+import background from './assets/team.jpg'
+import background2 from './assets/team2.jpg'
+import background3 from './assets/team3.jpg'
+import background4 from './assets/team4.jpg'
+import spectra from './assets/spectra.jpg'
+import health from './assets/fitness.jpg'
+import power from './assets/power.jpg'
 
 
 export default class Carousel extends React.Component {
+  //   CarouselCaption.propTypes = {
+  //   captionHeader: PropTypes.string,
+  //   // captionText: PropTypes.string.isRequired,
+  //   cssModule: PropTypes.object
+  // };
+
   constructor(props){
     super(props);
     this.state = {
@@ -18,7 +25,7 @@ export default class Carousel extends React.Component {
   }
 
   render() {
-    console.log("res: ", this.props.responses);
+    console.log("responses in carousel: ", this.props.responses);
       var items = [
       {
         src: background,
@@ -30,7 +37,7 @@ export default class Carousel extends React.Component {
         src: background2,
         altText: 'Quote 2',
         // caption: 'all the mentors :)',
-        header: 'all the mentors :)',
+        header: 'boba!!!',
       },
       {
         src: background3,
@@ -42,7 +49,7 @@ export default class Carousel extends React.Component {
         src: background4,
         altText: 'Quote 3',
         // caption: 'boba!!!',
-        header: 'boba!!!',
+        header: 'all the mentors :)',
       }
     ];
 
@@ -127,11 +134,12 @@ export default class Carousel extends React.Component {
       }
     ];
 
-    if(this.props.community === "gratitude"){
-      items = items;
-    }
+    // if(this.props.community === "gratitude"){
+    //   items = items;
+    // }
 
-    else if(this.props.community === "health"){
+    // else 
+    if(this.props.community === "health"){
       items = items2;
     }
 

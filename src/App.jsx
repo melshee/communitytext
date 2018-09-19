@@ -8,16 +8,18 @@ export default class App extends Component {
   constructor(props){
     super(props);
     this.updateView = this.updateView.bind(this);
+    this.getResponses = this.getResponses.bind(this);
+
     this.state = {
       currView: "home",
       responses: []
     };
 
     this.communityToQuestion = { //to map link to image
-      "gratitude": "What’s one thing you’re grateful for that happened today?",
-      "health": "What’s one healthy choice you made today?",
-      "education":  "What’s one thing you learned today?",
-      "empowerment": "What’s one thing you’re proud of today?" 
+      "Gratitude": "What’s one thing you’re grateful for that happened today?",
+      "Health/Fitness": "What’s one healthy choice you made today?",
+      "Education":  "What’s one thing you learned today?",
+      "Empowerment": "What’s one thing you’re proud of today?" 
     }
 
     // this.education.
@@ -31,35 +33,29 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    var responses = [];
-    let data = axios.get('https://warm-sands-52730.herokuapp.com/community')
-      .then(function (response) {
+    axios.get('https://warm-sands-52730.herokuapp.com/community')
+      .then((response) => {
         let communities = response.data;
-        console.log(communities);
-        var self = this;
-        communities.map((item)=> {
-          if(item["name"] == "Education") {
-            responses = item.responses;
-            console.log(responses);
-          } else if(item["name"] == "Health/Fitness") { 
-            responses = item.responses;
-            // console.log(health);
-          } else if(item["name"] == "Empowerment") {
-            responses = item.responses;
-          } else if(item["name"] == "Gratitude") {
-            responses = item.responses;
-          }
-          
-        })
+        // for()
+        this.setState({
+          responses: communities
+        });
 
-       // this.setState({responses: responses})
       })
       .catch(function (error) {
         console.log(error);
       });
-      // console.log("RES: ", responses);
-      this.setState({responses: responses});
+  }
 
+  getResponses() {
+    let allData = this.state.responses;
+    let responses;
+    allData.forEach( (d) => {
+      if( d.name === this.state.currView) {
+        responses = d.responses
+      }
+    })
+    return responses;
   }
 
   render() {
@@ -86,7 +82,7 @@ export default class App extends Component {
         <p>Friends in this community said:</p>
         {console.log("responses: ", this.state.responses)}
         <div className="carousel">
-          <Carousel community={this.state.currView} responses={this.state.responses}/>
+          <Carousel community={this.state.currView} responses={this.getResponses()}/>
         </div>
       </div>
     }

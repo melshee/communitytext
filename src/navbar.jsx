@@ -37,16 +37,16 @@ export default class Navbar extends React.Component {
             <NavLink disabled>Communities:</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#" onClick={() => this.changeView("gratitude")}>Gratitude</NavLink>
+            <NavLink href="#" onClick={() => this.changeView("Gratitude")}>Gratitude</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#" onClick={() => this.changeView("health")}>Health/Fitness</NavLink>
+            <NavLink href="#" onClick={() => this.changeView("Health/Fitness")}>Health/Fitness</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#" onClick={() => this.changeView("education")}>Education</NavLink>
+            <NavLink href="#" onClick={() => this.changeView("Education")}>Education</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#" onClick={() => this.changeView("empowerment")}>Empowerment</NavLink>
+            <NavLink href="#" onClick={() => this.changeView("Empowerment")}>Empowerment</NavLink>
           </NavItem>
         </Nav>
       </div>
