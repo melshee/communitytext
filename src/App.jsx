@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './navbar'
-import Carousel from './carousel';
+import ResponseCarousel from './response_carousel';
 import axios from 'axios';
 
 export default class App extends Component {
@@ -80,9 +80,9 @@ export default class App extends Component {
         <h1>Current community: {this.state.currView}</h1>
         <h3>{this.communityToQuestion[this.state.currView]}</h3>
         <p>Friends in this community said:</p>
-        {console.log("responses: ", this.state.responses)}
+        {/*console.log("responses: ", this.state.responses)*/}
         <div className="carousel">
-          <Carousel community={this.state.currView} responses={this.getResponses()}/>
+          <ResponseCarousel community={this.state.currView} responses={this.getResponses()}/>
         </div>
       </div>
     }
